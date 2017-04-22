@@ -84,6 +84,7 @@ class TableViewController: UITableViewController, UISearchResultsUpdating {
         let currentTime = changeHourFormat(time: getCurrentTime())
         let currentDay = getCurrentDay()
         
+        //test
         // TODO: - Need to use regex or something similar to separate hours and date
         /**
          Will use this format [Day] [Time Start] - [Time End]
