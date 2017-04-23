@@ -17,34 +17,94 @@
 		<string></string>
 		<key>office_location</key>
 		<string>PM 459</string>
-		<key>office_days_array</key>
+		<key>current_classes</key>
 		<array>
-			<string>Tuesday</string>
-			<string>Thursday</string>
-			<string>Tuesday</string>
-			<string>Thursday</string>
-		</array>
-		<key>office_hours_array</key>
-		<array>
-			<string>12:30pm</string>
-			<string>2:00pm</string>
-			<string>3:15pm</string>
-			<string>4:15pm</string>
-			<string>3:30pm</string>
-			<string>4:45pm</string>
-		</array>
-		<key>office_rooms_array</key>
-		<array>
-			<string>PM 203</string>
-			<string>PM 203</string>
-		</array>
-		<key>current_classes_array</key>
-		<array>
-			<string>CSCI 340</string>
-			<string>CSCI 480/680</string>
+			<dict>
+				<key>class_name</key>
+				<string>CSCI 340</string>
+				<key>office_days_array</key>
+				<array>
+					<string>Tuesday</string>
+					<string>Thursday</string>
+				</array>
+				<key>office_hours_start</key>
+				<array>
+					<string>12:30pm</string>
+				</array>
+				<key>office_hours_end</key>
+				<array>
+					<string>2:00pm</string>
+				</array>
+				<key>office_room</key>
+				<string>PM 203</string>
+			</dict>
 		</array>
 		<key>research_interests</key>
-		<string>Data Science, Big Data Analytics, Social Media Mining, Human Centered Computing</string>
+		<string>Data Science
+Big Data Analytics Social Media Mining Human Centered Computing</string>
+	</dict>
+	<dict>
+		<key>department_ID</key>
+		<string>Faculty</string>
+		<key>name</key>
+		<string>Alhoori, Hamed</string>
+		<key>position</key>
+		<string>Assistant Professor</string>
+		<key>degree</key>
+		<string>Ph.D., Texas A&amp;M University</string>
+		<key>email_address</key>
+		<string>alhoori@niu.edu</string>
+		<key>webpage_address</key>
+		<string></string>
+		<key>office_location</key>
+		<string>PM 459</string>
+		<key>current_classes</key>
+		<array>
+			<dict>
+				<key>class_name</key>
+				<string>CSCI 444</string>
+				<key>office_days_array</key>
+				<array>
+					<string>Monday</string>
+					<string>Wednesday</string>
+					<string>Sunday</string>
+				</array>
+				<key>office_hours_start</key>
+				<array>
+					<string>3:00pm</string>
+					<string>1:00pm</string>
+				</array>
+				<key>office_hours_end</key>
+				<array>
+					<string>5:00pm</string>
+					<string>4:00pm</string>
+				</array>
+				<key>office_room</key>
+				<string>PM 111</string>
+			</dict>
+			<dict>
+				<key>class_name</key>
+				<string>CSCI 333</string>
+				<key>office_days_array</key>
+				<array>
+					<string>Tuesday</string>
+					<string>Thursday</string>
+				</array>
+				<key>office_hours_start</key>
+				<array>
+					<string>11:00am</string>
+				</array>
+				<key>office_hours_end</key>
+				<array>
+					<string>2:00pm</string>
+				</array>
+				<key>office_room</key>
+				<string>PM 123</string>
+			</dict>
+		</array>
+		<key>research_interests</key>
+		<string>Data Science
+Big Data Analytics Social Media Mining Human Centered Computing</string>
 	</dict>
 </array>
 </plist>

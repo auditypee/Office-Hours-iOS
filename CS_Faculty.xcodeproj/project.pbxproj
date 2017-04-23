@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BB00B8511EAC647A002FC978 /* Classes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB00B8501EAC647A002FC978 /* Classes.swift */; };
 		BB7B126F1E972826004936EF /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7B126E1E972826004936EF /* TableViewCell.swift */; };
 		BB7B12711E973FF9004936EF /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7B12701E973FF9004936EF /* DetailViewController.swift */; };
 		BBD65E261E9183CD008CBD25 /* CSFaculty.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD65E251E9183CD008CBD25 /* CSFaculty.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BB00B8501EAC647A002FC978 /* Classes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Classes.swift; path = ../Classes.swift; sourceTree = "<group>"; };
 		BB7B126E1E972826004936EF /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		BB7B12701E973FF9004936EF /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		BBD65E251E9183CD008CBD25 /* CSFaculty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSFaculty.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 				BBDBF7CA1E908215005D1AD3 /* AppDelegate.swift */,
 				BBD65E281E9194C5008CBD25 /* TableViewController.swift */,
 				BB7B12701E973FF9004936EF /* DetailViewController.swift */,
+				BB00B8501EAC647A002FC978 /* Classes.swift */,
 				BBD65E251E9183CD008CBD25 /* CSFaculty.swift */,
 				BBDBF7CC1E908215005D1AD3 /* ViewController.swift */,
 				BBDBF7F81E90835A005D1AD3 /* CSDirectory.plist */,
@@ -287,6 +290,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB7B126F1E972826004936EF /* TableViewCell.swift in Sources */,
+				BB00B8511EAC647A002FC978 /* Classes.swift in Sources */,
 				BBDBF7CD1E908215005D1AD3 /* ViewController.swift in Sources */,
 				BBDBF7CB1E908215005D1AD3 /* AppDelegate.swift in Sources */,
 				BB7B12711E973FF9004936EF /* DetailViewController.swift in Sources */,

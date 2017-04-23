@@ -17,16 +17,11 @@ class CSFaculty: NSObject {
     var degree: String!
     var emailAddress: String!
     var webpageAddress: String?
-    
     var officeLocation: String?
-    var officeDays = [String]()
-    var officeHours = [String]()
-    var officeRooms = [String]()
-    
-    var currentClasses = [String]()
+    var currentClasses: [Classes]
     var researchInterests: String?
     
-    init(department_ID: String, name: String, position: String, degree: String, email_address: String, webpage_address: String, office_location: String, office_days_array: [String], office_hours_array: [String], office_rooms_array: [String], current_classes_array: [String], research_interests: String) {
+    init(department_ID: String, name: String, position: String, degree: String, email_address: String, webpage_address: String, office_location: String, current_classes: [Classes], research_interests: String) {
         self.departmentID = department_ID
         self.name = name
         self.position = position
@@ -34,10 +29,7 @@ class CSFaculty: NSObject {
         self.emailAddress = email_address
         self.webpageAddress = webpage_address
         self.officeLocation = office_location
-        self.officeDays = office_days_array
-        self.officeHours = office_hours_array
-        self.officeRooms = office_rooms_array
-        self.currentClasses = current_classes_array
+        self.currentClasses = current_classes
         self.researchInterests = research_interests
     }
 }

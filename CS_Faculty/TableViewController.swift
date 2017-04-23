@@ -5,17 +5,21 @@
 //  Created by Audi Bayron on 4/2/17.
 //  Copyright © 2017 Audi Bayron. All rights reserved.
 //
-/*
- "Available or Not Available during office hours"
- Initializes each object from the plist and adds them to the table
- Utilizes the searchController to find objects within the tableView
- TODO: - Hide search bar initially
- */
+/******************************************************************************************************
+ * "Available or Not Available for office hours"
+ * -- table view cell subtext determines whether or not a professor has an office hour at the current time
+ * -- see availability functions
+ * Initializes each object from the plist and adds them to the table
+ * -- added Classes object to store another array of dictionaries inside and array of dictionaries
+ * Utilizes the searchController to find objects within the tableView
+ * -- stores searched items in a different container to pull from
+ * -- uses UISearchResultsUpdating
+ * TODO: - Hide search bar initially
+ *****************************************************************************************************/
 
 import UIKit
 
 class TableViewController: UITableViewController, UISearchResultsUpdating {
-
     var facultyObjects = [CSFaculty]()
     var facultySearchResults = [CSFaculty]()
     
@@ -44,10 +48,11 @@ class TableViewController: UITableViewController, UISearchResultsUpdating {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-    // Initializes the facultyObjects array by reading the Property List
+    /**
+     * Description - Initializes the facultyObjects array by reading the Property List
+     */
     func readPList() {
         if let path = Bundle.main.path(forResource: "CSDirectory", ofType: "plist") {
             if let facultyArray = NSArray(contentsOfFile: path) as? [[String: Any]] {
@@ -60,14 +65,22 @@ class TableViewController: UITableViewController, UISearchResultsUpdating {
                     let webpageAddress = dict["webpage_address"] as! String
                     let officeLocation = dict["office_location"] as! String
                     
-                    let officeDays = dict["office_days_array"] as! [String]
-                    let officeHours = dict["office_hours_array"] as! [String]
-                    let officeRooms = dict["office_rooms_array"] as! [String]
-                    let currentClasses = dict["current_classes_array"] as! [String]
+                    // Initializes the Classes array 
+                    var classesObjects = [Classes]()
+                    let classesArray = dict["current_classes"] as! [[String: Any?]]
+                    for i in classesArray {
+                        let className = i["class_name"] as! String
+                        let officeDays = i["office_days_array"] as! [String]
+                        let officeHoursStart = i["office_hours_start"] as! [String]
+                        let officeHoursEnd = i["office_hours_end"] as! [String]
+                        let officeRoom = i["office_room"] as! String
+                        
+                        classesObjects.append(Classes(class_name: className, office_days_array: officeDays, office_hours_start: officeHoursStart, office_hours_end: officeHoursEnd, office_room: officeRoom))
+                    }
                     
                     let researchInterests = dict["research_interests"] as! String
                     
-                    facultyObjects.append(CSFaculty(department_ID: departmentID, name: name, position: position, degree: degree, email_address: emailAddress, webpage_address: webpageAddress, office_location: officeLocation, office_days_array: officeDays, office_hours_array: officeHours, office_rooms_array: officeRooms, current_classes_array: currentClasses, research_interests: researchInterests))
+                    facultyObjects.append(CSFaculty(department_ID: departmentID, name: name, position: position, degree: degree, email_address: emailAddress, webpage_address: webpageAddress, office_location: officeLocation, current_classes: classesObjects, research_interests: researchInterests))
                     
                 } // end for loop
             } // end facultyArray
@@ -75,23 +88,25 @@ class TableViewController: UITableViewController, UISearchResultsUpdating {
     }
     
     // MARK: - Availability Functions
-    ///////////////////////////////////////////// Availability Functions /////////////////////////////////////////////
+    
     /**
-     Determines the availability of each Faculty member
-     Takes current time and date and changes based on if they're available or not
+     * Determines the availability of each Faculty member
+     *
+     * - parameter start: Officehour's start time array
+     * - parameter end: Officehour's end time array
+     * - parameter days: Officeday array
+     *
+     * - returns: Determining whether or not the office hour is available for that given class
      */
-    func checkAvailability(hours: [String], days: [String]) -> Bool {
-        // All even index are time starts
+    func checkAvailability(start: [String], end: [String], days: [String]) -> Bool {
         var ohTimeStart = [Int]()
-        // All odd index are time ends
         var ohTimeEnd = [Int]()
         
-        for (index, element) in hours.enumerated() {
-            if (index%2 == 0) { // even
-                ohTimeStart.append(changeHourFormat(time: element))
-            } else { // odd
-                ohTimeEnd.append(changeHourFormat(time: element))
-            }
+        for i in start {
+            ohTimeStart.append(changeHourFormat(time: i))
+        }
+        for i in end {
+            ohTimeEnd.append(changeHourFormat(time: i))
         }
         
         // Compares current time and office hours to determine availability
@@ -99,10 +114,16 @@ class TableViewController: UITableViewController, UISearchResultsUpdating {
         return (checkHoursAvailability(timeStart: ohTimeStart, timeEnd: ohTimeEnd)) && (checkDayAvailability(days: days))
     }
     
-    // Checks the given array and iterates to check if the current day is the same as one of the available days
+    /**
+     * Description - Checks the given array and iterates to check if the current day is the same as one of the available days
+     *
+     * - parameter days:
+     *
+     * - returns:
+     */
     func checkDayAvailability(days: [String]) -> Bool {
         for i in days {
-            print("\(i)")
+            //print("\(i)")
             if (getCurrentDay() == i) {
                 return true
             }
@@ -110,12 +131,19 @@ class TableViewController: UITableViewController, UISearchResultsUpdating {
         return false
     }
     
-    // Checks the given arrays and iterates over them to check if they're within the available time
+    /**
+     * Description - Checks the given arrays and iterates over them to check if they're within the available time
+     *
+     * - parameter timeStart:
+     * - parameter timeEnd:
+     *
+     * - returns:
+     */
     func checkHoursAvailability(timeStart: [Int], timeEnd: [Int]) -> Bool {
         let currentTime = getCurrentTime()
         
         for (index, element) in timeStart.enumerated() {
-            print("\(element) < \(currentTime) < \(timeEnd[index])")
+            //print("\(element) < \(currentTime) < \(timeEnd[index])")
             if (currentTime > element && currentTime < timeEnd[index]) {
                 return true
             }
@@ -123,14 +151,11 @@ class TableViewController: UITableViewController, UISearchResultsUpdating {
         return false
     }
     
-    // Checks which rooms are used for the specific office hours and returns that room
-    func checkRoomAvailability(rooms: [String], days: [String]) -> String {
-        // TODO: - implement this
-        
-        return ""
-    }
-    
-    // Takes the Current Time in a hh:mma format
+    /**
+     * Description - Takes the Current Time in hh:mma format
+     *
+     * - returns: The current time in hh:mma format
+     */
     func getCurrentTime() -> Int {
         let d = Date()
         let calendar = Calendar.current
@@ -152,8 +177,12 @@ class TableViewController: UITableViewController, UISearchResultsUpdating {
         
         return currentTime
     }
-    
-    // Takes the Current Day
+
+    /**
+     * Description - Takes the Current Day
+     *
+     * - returns: Current day
+     */
     func getCurrentDay() -> String {
         let calendar = Calendar.current
         
@@ -163,8 +192,14 @@ class TableViewController: UITableViewController, UISearchResultsUpdating {
         
         return currentDay
     }
-    
-    // Turns given String to turn into military time
+
+    /**
+     * Description - Turns given String to turn into military time
+     *
+     * - parameter time: The current time
+     *
+     * - returns: Time in format HHmm
+     */
     func changeHourFormat(time: String) -> Int {
         let dateFormatter = DateFormatter()
         
@@ -177,18 +212,19 @@ class TableViewController: UITableViewController, UISearchResultsUpdating {
     }
     
     // MARK: - Search Functions
-    //////////////////////////////////////// Search Functions ////////////////////////////////////////
     
     /**
-        Updates the Table based on the search results
-    */
+     * Updates the Table based on the search results, protocol for UISearchResultsUpdating
+     */
     func updateSearchResults(for searchController: UISearchController) {
         filterBySearch(searchText: searchController.searchBar.text!)
     }
     
     /**
-        Searches by name
-    */
+     * Description - Searches by professor's name
+     *
+     * - parameter searchText:
+     */
     func filterBySearch(searchText: String) {
         self.facultySearchResults = facultyObjects.filter { faculty in
             return faculty.name.lowercased().contains(searchText.lowercased())
@@ -197,15 +233,14 @@ class TableViewController: UITableViewController, UISearchResultsUpdating {
     }
     
     // MARK: - Table View Data Source
-    ////////////////////////////////////// Table View Functions //////////////////////////////////////
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
     /**
-        Number of objects within the tableView
-    */
+     * Number of objects within the tableView
+     */
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     
         if (self.resultSearchController.isActive) {
@@ -215,35 +250,42 @@ class TableViewController: UITableViewController, UISearchResultsUpdating {
     }
 
     /**
-        Changes each cell's attributes
-    */
+     * Changes each cell's attributes (professor's name, availability for office hours)
+     */
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var faculty: CSFaculty
-        var available: String
+        var currentClasses = ""
         
-        // For searching
+        // So searched objects will show up
         if (self.resultSearchController.isActive) {
             faculty = facultySearchResults[indexPath.row]
         } else {
             faculty = facultyObjects[indexPath.row]
         }
         
-        // For the availability of each professor
-        if (checkAvailability(hours: faculty.officeHours, days: faculty.officeDays)) {
-            available = "Currently Available"
-        } else {
-            available = "Not Available"
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CELL", for: indexPath) as! TableViewCell
+        
+        for i in faculty.currentClasses {
+            currentClasses += "\(i.className!) "
         }
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CELL", for: indexPath) as! TableViewCell
-
+        // When there are no office hours for the professor
         cell.cellNameLbl.text = faculty.name
-        cell.cellAvailLbl.text = available
-        //cell.cellOfficLbl.text = faculty.officeRoom
+        cell.cellAvailLbl.text = "No Office Hours at this time"
+        cell.cellClassLbl.text = "Classes: \(currentClasses)"
+        
+        for i in faculty.currentClasses {
+            // When there are office hours for the professor
+            if (checkAvailability(start: i.officeHoursStart, end: i.officeHoursEnd, days: i.officeDays)) {
+                cell.cellClassLbl.isHidden = true
+                cell.cellAvailLbl.text = "Office Hours available for \(i.className!)"
+            }
+        }
         
         return cell
     }
     
+    /*
     // Changes background color for each cell based on its spot on the table
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if indexPath.row % 2 == 0 {
@@ -252,11 +294,14 @@ class TableViewController: UITableViewController, UISearchResultsUpdating {
             cell.backgroundColor = UIColor.white
         }
     }
+    */
     
     // MARK: - Navigation
     ////////////////////////////////////////// Navigation //////////////////////////////////////////
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    /**
+     * Sends facultyObjects data to the DetailViewController
+     */
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
@@ -265,6 +310,8 @@ class TableViewController: UITableViewController, UISearchResultsUpdating {
             
             if let indexPath = self.tableView.indexPathForSelectedRow {
                 var faculty: CSFaculty
+                
+                // So searched objects will show up
                 if (resultSearchController.isActive && resultSearchController.searchBar.text != "") {
                     faculty = facultySearchResults[indexPath.row]
                     resultSearchController.isActive = false
@@ -280,11 +327,8 @@ class TableViewController: UITableViewController, UISearchResultsUpdating {
                 destVC.sentData4 = faculty.emailAddress
                 destVC.sentData5 = faculty.webpageAddress
                 destVC.sentData6 = faculty.officeLocation
-                destVC.sentData7 = faculty.officeDays
-                destVC.sentData8 = faculty.officeHours
-                destVC.sentData9 = faculty.officeRooms
-                destVC.sentData10 = faculty.currentClasses
-                destVC.sentData11 = faculty.researchInterests
+                destVC.sentData7 = faculty.currentClasses
+                destVC.sentData8 = faculty.researchInterests
             }
         }
     }

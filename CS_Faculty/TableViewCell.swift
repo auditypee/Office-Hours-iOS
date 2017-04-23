@@ -14,7 +14,7 @@ class TableViewCell: UITableViewCell {
     
     @IBOutlet weak var cellAvailLbl: UILabel!
     
-    @IBOutlet weak var cellOfficLbl: UILabel!
+    @IBOutlet weak var cellClassLbl: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
