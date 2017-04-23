@@ -7,14 +7,9 @@
 //
 /*
  "Available or Not Available during office hours"
- - Should use regex to find certain things inside the string
- - should separate hours, classes
  Initializes each object from the plist and adds them to the table
- Added a search function
- Setting to change how each cell is viewed maybe?
- - current classes, ???
- - position, degree
- - implement a settings tab
+ Utilizes the searchController to find objects within the tableView
+ TODO: - Hide search bar initially
  */
 
 import UIKit
@@ -57,59 +52,86 @@ class TableViewController: UITableViewController, UISearchResultsUpdating {
         if let path = Bundle.main.path(forResource: "CSDirectory", ofType: "plist") {
             if let facultyArray = NSArray(contentsOfFile: path) as? [[String: Any]] {
                 for dict in facultyArray {
-                    let departmentID = dict["department_ID"] as? String
-                    let name = dict["name"] as? String
-                    let position = dict["position"] as? String
+                    let departmentID = dict["department_ID"] as! String
+                    let name = dict["name"] as! String
+                    let position = dict["position"] as! String
                     let degree = dict["degree"] as! String
-                    let emailAddress = dict["email_address"] as? String
-                    let webpageAddress = dict["webpage_address"] as? String
-                    let officeLocation = dict["office_location"] as? String
-                    let officeHours = dict["office_hours"] as? String
-                    let officeRoom = dict["office_room"] as? String
-                    let currentClasses = dict["current_classes"] as? String
-                    let researchInterests = dict["research_interests"] as? String
+                    let emailAddress = dict["email_address"] as! String
+                    let webpageAddress = dict["webpage_address"] as! String
+                    let officeLocation = dict["office_location"] as! String
                     
-                    facultyObjects.append(CSFaculty(department_ID: departmentID!, name: name!, position: position!, degree: degree, email_address: emailAddress!, webpage_address: webpageAddress!, office_location: officeLocation!, office_hours: officeHours!, office_room: officeRoom!, current_classes: currentClasses!, research_interests: researchInterests!))
+                    let officeDays = dict["office_days_array"] as! [String]
+                    let officeHours = dict["office_hours_array"] as! [String]
+                    let officeRooms = dict["office_rooms_array"] as! [String]
+                    let currentClasses = dict["current_classes_array"] as! [String]
+                    
+                    let researchInterests = dict["research_interests"] as! String
+                    
+                    facultyObjects.append(CSFaculty(department_ID: departmentID, name: name, position: position, degree: degree, email_address: emailAddress, webpage_address: webpageAddress, office_location: officeLocation, office_days_array: officeDays, office_hours_array: officeHours, office_rooms_array: officeRooms, current_classes_array: currentClasses, research_interests: researchInterests))
+                    
                 } // end for loop
             } // end facultyArray
         } // end path
     }
     
     // MARK: - Availability Functions
+    ///////////////////////////////////////////// Availability Functions /////////////////////////////////////////////
     /**
      Determines the availability of each Faculty member
      Takes current time and date and changes based on if they're available or not
      */
-    func availability(hours: String) -> String {
-        let currentTime = changeHourFormat(time: getCurrentTime())
-        let currentDay = getCurrentDay()
+    func checkAvailability(hours: [String], days: [String]) -> Bool {
+        // All even index are time starts
+        var ohTimeStart = [Int]()
+        // All odd index are time ends
+        var ohTimeEnd = [Int]()
         
-        //test
-        // TODO: - Need to use regex or something similar to separate hours and date
-        /**
-         Will use this format [Day] [Time Start] - [Time End]
-         e.g. Tuesday Thursday 12:30pm - 2:00pm
-         ([0-9]*:[0-9]*(?:am|pm))
-         */
-  
-        let ohDay = "Sunday"
-        let ohTimeStart = "12:00am"
-        let ohTimeEnd = "11:59pm"
-        
-        let ohTimeStart24 = changeHourFormat(time: ohTimeStart)
-        let ohTimeEnd24 = changeHourFormat(time: ohTimeEnd)
+        for (index, element) in hours.enumerated() {
+            if (index%2 == 0) { // even
+                ohTimeStart.append(changeHourFormat(time: element))
+            } else { // odd
+                ohTimeEnd.append(changeHourFormat(time: element))
+            }
+        }
         
         // Compares current time and office hours to determine availability
         // If (within military time) && (day is the same)
-        if ((ohTimeStart24 < currentTime && ohTimeEnd24 > currentTime) && (currentDay == ohDay)) {
-            return "Currently Available"
+        return (checkHoursAvailability(timeStart: ohTimeStart, timeEnd: ohTimeEnd)) && (checkDayAvailability(days: days))
+    }
+    
+    // Checks the given array and iterates to check if the current day is the same as one of the available days
+    func checkDayAvailability(days: [String]) -> Bool {
+        for i in days {
+            print("\(i)")
+            if (getCurrentDay() == i) {
+                return true
+            }
         }
+        return false
+    }
+    
+    // Checks the given arrays and iterates over them to check if they're within the available time
+    func checkHoursAvailability(timeStart: [Int], timeEnd: [Int]) -> Bool {
+        let currentTime = getCurrentTime()
         
-        return "Not Available"
+        for (index, element) in timeStart.enumerated() {
+            print("\(element) < \(currentTime) < \(timeEnd[index])")
+            if (currentTime > element && currentTime < timeEnd[index]) {
+                return true
+            }
+        }
+        return false
+    }
+    
+    // Checks which rooms are used for the specific office hours and returns that room
+    func checkRoomAvailability(rooms: [String], days: [String]) -> String {
+        // TODO: - implement this
+        
+        return ""
     }
     
     // Takes the Current Time in a hh:mma format
-    func getCurrentTime() -> String {
+    func getCurrentTime() -> Int {
         let d = Date()
         let calendar = Calendar.current
         
@@ -125,8 +147,9 @@ class TableViewController: UITableViewController, UISearchResultsUpdating {
             hour = hour%12
             meridiem = "pm"
         }
-        let currentTime = String(format:"%02i:%02i", hour, minutes) + "\(meridiem)"
-
+        let s = String(format:"%02i:%02i", hour, minutes) + "\(meridiem)"
+        let currentTime = changeHourFormat(time: s)
+        
         return currentTime
     }
     
@@ -156,18 +179,22 @@ class TableViewController: UITableViewController, UISearchResultsUpdating {
     // MARK: - Search Functions
     //////////////////////////////////////// Search Functions ////////////////////////////////////////
     
+    /**
+        Updates the Table based on the search results
+    */
     func updateSearchResults(for searchController: UISearchController) {
         filterBySearch(searchText: searchController.searchBar.text!)
     }
     
+    /**
+        Searches by name
+    */
     func filterBySearch(searchText: String) {
         self.facultySearchResults = facultyObjects.filter { faculty in
             return faculty.name.lowercased().contains(searchText.lowercased())
         }
         tableView.reloadData()
     }
-    
-    
     
     // MARK: - Table View Data Source
     ////////////////////////////////////// Table View Functions //////////////////////////////////////
@@ -176,6 +203,9 @@ class TableViewController: UITableViewController, UISearchResultsUpdating {
         return 1
     }
 
+    /**
+        Number of objects within the tableView
+    */
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     
         if (self.resultSearchController.isActive) {
@@ -184,21 +214,32 @@ class TableViewController: UITableViewController, UISearchResultsUpdating {
         return facultyObjects.count
     }
 
+    /**
+        Changes each cell's attributes
+    */
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var faculty: CSFaculty
+        var available: String
         
+        // For searching
         if (self.resultSearchController.isActive) {
             faculty = facultySearchResults[indexPath.row]
-            
         } else {
             faculty = facultyObjects[indexPath.row]
         }
-            
+        
+        // For the availability of each professor
+        if (checkAvailability(hours: faculty.officeHours, days: faculty.officeDays)) {
+            available = "Currently Available"
+        } else {
+            available = "Not Available"
+        }
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "CELL", for: indexPath) as! TableViewCell
 
         cell.cellNameLbl.text = faculty.name
-        cell.cellAvailLbl.text = availability(hours: faculty.officeHours!)
-        cell.cellOfficLbl.text = faculty.officeRoom
+        cell.cellAvailLbl.text = available
+        //cell.cellOfficLbl.text = faculty.officeRoom
         
         return cell
     }
@@ -232,17 +273,18 @@ class TableViewController: UITableViewController, UISearchResultsUpdating {
                 }
                 
                 destVC.navigationItem.title = faculty.name
-                //destVC.sentData0 = faculty.departmentID
-                //destVC.sentData1 = faculty.name
-                //destVC.sentData2 = faculty.position
-                //destVC.sentData3 = faculty.degree
-                //destVC.sentData4 = faculty.emailAddress
-                //destVC.sentData5 = faculty.webpageAddress
-                //destVC.sentData6 = faculty.officeLocation
-                //destVC.sentData7 = faculty.officeHours
-                //destVC.sentData8 = faculty.officeRoom
-                //destVC.sentData9 = faculty.currentClasses
-                //destVC.sentData10 = faculty.researchInterests
+                destVC.sentData0 = faculty.departmentID
+                destVC.sentData1 = faculty.name
+                destVC.sentData2 = faculty.position
+                destVC.sentData3 = faculty.degree
+                destVC.sentData4 = faculty.emailAddress
+                destVC.sentData5 = faculty.webpageAddress
+                destVC.sentData6 = faculty.officeLocation
+                destVC.sentData7 = faculty.officeDays
+                destVC.sentData8 = faculty.officeHours
+                destVC.sentData9 = faculty.officeRooms
+                destVC.sentData10 = faculty.currentClasses
+                destVC.sentData11 = faculty.researchInterests
             }
         }
     }

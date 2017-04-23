@@ -9,20 +9,6 @@
 import UIKit
 
 class DetailViewController: UIViewController {
-
-    
-    //destVC.sentData0 = faculty.departmentID
-    //destVC.sentData1 = faculty.name
-    //destVC.sentData2 = faculty.position
-    //destVC.sentData3 = faculty.degree
-    //destVC.sentData4 = faculty.emailAddress
-    //destVC.sentData5 = faculty.webpageAddress
-    //destVC.sentData6 = faculty.officeLocation
-    //destVC.sentData7 = faculty.officeHours
-    //destVC.sentData8 = faculty.officeRoom
-    //destVC.sentData9 = faculty.currentClasses
-    //destVC.sentData10 = faculty.researchInterests
-    
     var sentData0: String! // Department_ID
     var sentData1: String! // Name
     var sentData2: String! // Position
@@ -30,14 +16,21 @@ class DetailViewController: UIViewController {
     var sentData4: String! // Email_Address
     var sentData5: String! // Webpage_Address
     var sentData6: String! // Office_Location
-    var sentData7: String! // Office_Hours
-    var sentData8: String! // Office Room
-    var sentData9: String! // Current_Classes
-    var sentData10: String! // Research Interests
+    var sentData7: [String]! // Office_Days
+    var sentData8: [String]! // Office_Hours
+    var sentData9: [String]! // Office Room
+    var sentData10: [String]! // Current_Classes
+    var sentData11: String! // Research Interests
+    
+    @IBOutlet weak var positionLabel: UILabel!
+    @IBOutlet weak var degreeLabel: UILabel!
+    @IBOutlet weak var webpageLabel: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        
         // Do any additional setup after loading the view.
     }
 
