@@ -5,10 +5,12 @@
 //  Created by Audi Bayron on 4/6/17.
 //  Copyright © 2017 Audi Bayron. All rights reserved.
 //
-/*
- * TODO: - Documentation
- *
- */
+/*******************************************************************************************************
+ * Populates the DetailViewController with the professor's information
+ * -- webpage button leads to professor's webpage
+ * --
+ * TODO: - Try out array of labels
+ ******************************************************************************************************/
 import UIKit
 
 class DetailViewController: UIViewController {
@@ -25,13 +27,13 @@ class DetailViewController: UIViewController {
     
     // MARK: - IBOutlets
     
-    @IBOutlet weak var positionLabel: UILabel!
+    @IBOutlet weak var positionTV: UITextView!
     @IBOutlet weak var degreeLabel: UILabel!
     @IBOutlet weak var webpageBtnOutlet: UIButton!
     
     @IBOutlet weak var classesTextView: UITextView!
+    @IBOutlet weak var officeDaysTextView: UITextView!
     @IBOutlet weak var officeHoursTextView: UITextView!
-    @IBOutlet weak var officeRoomDaysTextView: UITextView!
     
     @IBOutlet weak var emailAddressLabel: UILabel!
     @IBOutlet weak var officeLabel: UILabel!
@@ -42,18 +44,23 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Hides the webpage button if webpage is not provided
         if (sentData5 == "") {
             webpageBtnOutlet.isEnabled = false
         }
         
+        // See loadDate()
         loadData()
     }
     
+    /**
+     * Description - Loads the data for a given professor. Unpacks the professor's classes into each textView. If retired or has no classes, it leaves each field blank.
+     *
+     */
     func loadData() {
-        positionLabel.text = sentData2
+        positionTV.text = sentData2
         degreeLabel.text = sentData3
         
-
         webpageBtnOutlet.setTitle(sentData5, for: .normal)
         
         var className = ""
@@ -61,7 +68,7 @@ class DetailViewController: UIViewController {
         var officeHours = ""
         
         for i in sentData7 {
-            if (i.className != "No Classes") {
+            if (i.className != "No Classes" && i.className != "Retired") {
                 className += "\(unpackClassName(cn: i))\n"
                 officeDays += "\(unpackOfficeDays(od: i))\n"
                 officeHours += "\(unpackOfficeHours(oh: i))\n"
@@ -69,7 +76,7 @@ class DetailViewController: UIViewController {
         }
         
         classesTextView.text = className
-        officeRoomDaysTextView.text = officeDays
+        officeDaysTextView.text = officeDays
         officeHoursTextView.text = officeHours
         
         emailAddressLabel.text = sentData4
@@ -82,18 +89,28 @@ class DetailViewController: UIViewController {
     
     // MARK: - Unpackers
     
+    /**
+     * Description - Given a professor's class, it returns its name
+     *
+     * - parameter cn: The professor's class
+     *
+     * - returns: The class' name
+     */
     func unpackClassName(cn: Classes) -> String {
         var unpacked: String
         
         unpacked = cn.className!
         
-        if (cn.officeHoursStart.count > 1) {
-            unpacked += "\n"
-        }
-        
         return unpacked
     }
     
+    /**
+     * Description - Given a professor's class, it returns its days for office hours
+     *
+     * - parameter cn: The professor's class
+     *
+     * - returns: The class' available days for office hours
+     */
     func unpackOfficeDays(od: Classes) -> String {
         var unpacked = ""
         for i in od.officeDays {
@@ -101,14 +118,16 @@ class DetailViewController: UIViewController {
             unpacked += "\(i.substring(to: index)) "
 
         }
-    
-        if (od.officeHoursStart.count > 1) {
-            unpacked += "\n"
-        }
-        
         return unpacked
     }
     
+    /**
+     * Description - Given a professor's class, it returns its time for office hours
+     *
+     * - parameter cn: The professor's class
+     *
+     * - returns: The class' available time for office hours in a hh:mma - hh:mma format
+     */
     func unpackOfficeHours(oh: Classes) -> String {
         var unpacked = ""
 
@@ -122,20 +141,5 @@ class DetailViewController: UIViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-    }
-    
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-        if(segue.identifier == "WebPageView") {
-            let destVC = segue.destination as! WebPageViewController
-            
-            destVC.navigationItem.title = "Web Page"
-            destVC.sentData1 = sentData5
-        }
-
     }
 }

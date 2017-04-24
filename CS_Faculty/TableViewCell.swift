@@ -5,6 +5,9 @@
 //  Created by Audi Bayron on 4/6/17.
 //  Copyright © 2017 Audi Bayron. All rights reserved.
 //
+/*******************************************************************************************************
+ * Cell - contains UI stuff to be changed based on code
+ ******************************************************************************************************/
 
 import UIKit
 

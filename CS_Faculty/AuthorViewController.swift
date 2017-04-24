@@ -5,12 +5,18 @@
 //  Created by Audi Bayron on 4/24/17.
 //  Copyright © 2017 Audi Bayron. All rights reserved.
 //
-
+/*******************************************************************************************************
+ * Loads the author's webpage
+ ******************************************************************************************************/
 import UIKit
 
 class AuthorViewController: UIViewController {
 
     @IBOutlet weak var webView: UIWebView!
+    
+    /**
+     * Description - Loads the author's webpage
+     */
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,16 +32,5 @@ class AuthorViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

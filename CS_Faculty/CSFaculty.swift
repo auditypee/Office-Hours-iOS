@@ -5,9 +5,9 @@
 //  Created by Audi Bayron on 4/2/17.
 //  Copyright © 2017 Audi Bayron. All rights reserved.
 //
-/*
- Creates an object that holds the data from the plist
- */
+/*******************************************************************************************************
+ * Creates an object that holds the data from the plist
+ ******************************************************************************************************/
 import UIKit
 
 class CSFaculty: NSObject {

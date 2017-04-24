@@ -5,7 +5,7 @@
 //  Created by Audi Bayron on 4/2/17.
 //  Copyright © 2017 Audi Bayron. All rights reserved.
 //
-/******************************************************************************************************
+/*******************************************************************************************************
  * "Available or Not Available for office hours"
  * -- table view cell subtext determines whether or not a professor has an office hour at the current time
  * -- see availability functions
@@ -14,8 +14,9 @@
  * Utilizes the searchController to find objects within the tableView
  * -- stores searched items in a different container to pull from
  * -- uses UISearchResultsUpdating
- * TODO: - Hide search bar initially
- *****************************************************************************************************/
+ * TODO: - Scope Search
+ * TODO: - Show which office hours are up next
+ ******************************************************************************************************/
 
 import UIKit
 
@@ -225,10 +226,13 @@ class TableViewController: UITableViewController, UISearchResultsUpdating {
      */
     func filterBySearch(searchText: String) {
         self.facultySearchResults = facultyObjects.filter { faculty in
+            
             return faculty.name.lowercased().contains(searchText.lowercased())
         }
         tableView.reloadData()
     }
+    
+
     
     // MARK: - Table View Data Source
     
@@ -273,7 +277,7 @@ class TableViewController: UITableViewController, UISearchResultsUpdating {
         cell.cellClassTV.text = "\(currentClasses)"
         
         for i in faculty.currentClasses {
-            if (i.className == "No Classes") {
+            if (i.className == "No Classes" || i.className == "Retired") {
                 cell.cellAvailLbl.text = ""
             }
             // When there are office hours for the professor
@@ -284,6 +288,11 @@ class TableViewController: UITableViewController, UISearchResultsUpdating {
         }
         
         return cell
+    }
+    @IBAction func refresh(_ sender: UIRefreshControl) {
+        self.tableView.reloadData()
+        
+        sender.endRefreshing()
     }
     
     // Changes background color for each cell based on its spot on the table

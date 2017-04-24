@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		BB00B8511EAC647A002FC978 /* Classes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB00B8501EAC647A002FC978 /* Classes.swift */; };
+		BB022B761EAE844400DCB506 /* Profile in Resources */ = {isa = PBXBuildFile; fileRef = BB57DFF21EADB9C200102DE0 /* Profile */; };
 		BB57DFF11EADB84500102DE0 /* WebPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB57DFF01EADB84500102DE0 /* WebPageViewController.swift */; };
-		BB57DFF31EADB9C200102DE0 /* Profile in Resources */ = {isa = PBXBuildFile; fileRef = BB57DFF21EADB9C200102DE0 /* Profile */; };
 		BB57DFF51EADC77900102DE0 /* AuthorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB57DFF41EADC77900102DE0 /* AuthorViewController.swift */; };
 		BB7B126F1E972826004936EF /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7B126E1E972826004936EF /* TableViewCell.swift */; };
 		BB7B12711E973FF9004936EF /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7B12701E973FF9004936EF /* DetailViewController.swift */; };
@@ -50,7 +50,7 @@
 		BB7B12701E973FF9004936EF /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		BBD65E251E9183CD008CBD25 /* CSFaculty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSFaculty.swift; sourceTree = "<group>"; };
 		BBD65E281E9194C5008CBD25 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
-		BBDBF7C71E908215005D1AD3 /* CS_Faculty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CS_Faculty.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BBDBF7C71E908215005D1AD3 /* .app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = .app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBDBF7CA1E908215005D1AD3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BBDBF7CF1E908215005D1AD3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BBDBF7D11E908215005D1AD3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -114,7 +114,7 @@
 		BBDBF7C81E908215005D1AD3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BBDBF7C71E908215005D1AD3 /* CS_Faculty.app */,
+				BBDBF7C71E908215005D1AD3 /* .app */,
 				BBDBF7DB1E908215005D1AD3 /* CS_FacultyTests.xctest */,
 				BBDBF7E61E908215005D1AD3 /* CS_FacultyUITests.xctest */,
 			);
@@ -130,8 +130,8 @@
 				BB7B126E1E972826004936EF /* TableViewCell.swift */,
 				BBD65E281E9194C5008CBD25 /* TableViewController.swift */,
 				BB7B12701E973FF9004936EF /* DetailViewController.swift */,
-				BB00B8501EAC647A002FC978 /* Classes.swift */,
 				BB57DFF41EADC77900102DE0 /* AuthorViewController.swift */,
+				BB00B8501EAC647A002FC978 /* Classes.swift */,
 				BBD65E251E9183CD008CBD25 /* CSFaculty.swift */,
 				BB57DFF01EADB84500102DE0 /* WebPageViewController.swift */,
 				BBDBF7F81E90835A005D1AD3 /* CSDirectory.plist */,
@@ -174,7 +174,7 @@
 			);
 			name = CS_Faculty;
 			productName = CS_Faculty;
-			productReference = BBDBF7C71E908215005D1AD3 /* CS_Faculty.app */;
+			productReference = BBDBF7C71E908215005D1AD3 /* .app */;
 			productType = "com.apple.product-type.application";
 		};
 		BBDBF7DA1E908215005D1AD3 /* CS_FacultyTests */ = {
@@ -270,7 +270,7 @@
 				BBDBF7D51E908215005D1AD3 /* LaunchScreen.storyboard in Resources */,
 				BBDBF7D21E908215005D1AD3 /* Assets.xcassets in Resources */,
 				BBDBF7F91E90835A005D1AD3 /* CSDirectory.plist in Resources */,
-				BB57DFF31EADB9C200102DE0 /* Profile in Resources */,
+				BB022B761EAE844400DCB506 /* Profile in Resources */,
 				BBDBF7D01E908215005D1AD3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -452,13 +452,15 @@
 		BBDBF7F01E908215005D1AD3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = JBZTV7XRJ4;
+				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = YES;
 				INFOPLIST_FILE = CS_Faculty/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "edu.niu.students.bayron.CS-Faculty";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = CS_Faculty;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -466,13 +468,15 @@
 		BBDBF7F11E908215005D1AD3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = JBZTV7XRJ4;
+				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = YES;
 				INFOPLIST_FILE = CS_Faculty/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "edu.niu.students.bayron.CS-Faculty";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = CS_Faculty;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

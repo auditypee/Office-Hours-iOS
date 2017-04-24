@@ -5,7 +5,9 @@
 //  Created by Audi Bayron on 4/22/17.
 //  Copyright © 2017 Audi Bayron. All rights reserved.
 //
-
+/*******************************************************************************************************
+ * Creates an object that holds data from a nested array inside the plist
+ ******************************************************************************************************/
 import UIKit
 
 class Classes: NSObject {
