@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/> <!--320-->
+		
+		<title>Mobile Friendly Page</title>
+
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="Profile/main.css" />
+		<link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Open+Sans:600italic,400,600,800' type='text/css' media='all'/>
+
+		<!-- JavaScript -->
+		<script type="text/javascript" src="javascript/jQuery.all.js"></script>
+		<script type="text/javascript" src="javascript/dropDown.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				//Run code upload Page load
+				enableDropDownForIds('#userInfo, #createAccount');
+			});
+		</script>
+	</head>
+	<body>
+		<div id="titleBar" class="blue-gradiant">My Portfolio</div>
+		<img src="Profile/profile_pic.jpg" id="profile_pic" alt="Profile Picture"/>
+		<div id="name" class="blue-gradiant">ABOUT ME</div>
+		<div class="experienceDetails">
+			<span class="company">AUDI BAYRON</span>
+			<span class="address">DEKALB, IL</span>
+			<span class="yearSpan">GRADUATION DATE: FALL 2018</span>
+			<span class="positionTitle">UNDERGRADUATE STUDENT OF NORTHERN ILLINOIS UNIVERSITY </span>
+			<p>CURRENTLY STUDYING COMPUTER SCIENCE. LEARNING C++ AND SWIFT. PLANNING TO START MY CAREER IN SOFTWARE DEVELOPMENT </p>
+		</div>
+        
+        
+        
+        
+		<hr class="width-75">
+		<div class="experienceDetails">
+        
+        <span class="company">CSCI 321/521</span>
+			<span class="address">COLE 106</span>
+			<span class="yearSpan">SPRING 2017</span>
+			<span class="positionTitle">MoWeFr 9:00AM-9:50AM</span>
+		  <p>UNDERGRADUATE STUDENT MOBILE DEVELOPER</p>
+		</div>
+
+		<div id="footer">
+			Contact: Phone (224) 600-3544 | Email a.bayron01@gmail.com
+	</div>
+	</body>
+</html>

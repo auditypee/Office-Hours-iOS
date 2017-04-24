@@ -13,8 +13,8 @@ class TableViewCell: UITableViewCell {
     @IBOutlet weak var cellNameLbl: UILabel!
     
     @IBOutlet weak var cellAvailLbl: UILabel!
-    
-    @IBOutlet weak var cellClassLbl: UILabel!
+
+    @IBOutlet weak var cellClassTV: UITextView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -3,8 +3,6 @@
 <plist version="1.0">
 <array>
 	<dict>
-		<key>department_ID</key>
-		<string>Faculty</string>
 		<key>name</key>
 		<string>Alhoori, Hamed</string>
 		<key>position</key>
@@ -14,7 +12,7 @@
 		<key>email_address</key>
 		<string>alhoori@niu.edu</string>
 		<key>webpage_address</key>
-		<string></string>
+		<string>http://faculty.cs.niu.edu/~alhoori/</string>
 		<key>office_location</key>
 		<string>PM 459</string>
 		<key>current_classes</key>
@@ -35,56 +33,139 @@
 				<array>
 					<string>2:00pm</string>
 				</array>
-				<key>office_room</key>
-				<string>PM 203</string>
+			</dict>
+			<dict>
+				<key>class_name</key>
+				<string>CSCI 480/680</string>
+				<key>office_days_array</key>
+				<array>
+					<string>Tuesday</string>
+					<string>Thursday</string>
+				</array>
+				<key>office_hours_start</key>
+				<array>
+					<string>3:15pm</string>
+				</array>
+				<key>office_hours_end</key>
+				<array>
+					<string>4:15pm</string>
+				</array>
 			</dict>
 		</array>
 		<key>research_interests</key>
 		<string>Data Science
-Big Data Analytics Social Media Mining Human Centered Computing</string>
+Big Data Analytics
+Social Media Mining
+Human Centered Computing</string>
 	</dict>
 	<dict>
-		<key>department_ID</key>
-		<string>Faculty</string>
 		<key>name</key>
-		<string>Alhoori, Hamed</string>
+		<string>Berezinski, John</string>
 		<key>position</key>
-		<string>Assistant Professor</string>
+		<string>Computer Science Systems Manager | Instructor</string>
 		<key>degree</key>
-		<string>Ph.D., Texas A&amp;M University</string>
+		<string>M.S., Northern Illinois University</string>
 		<key>email_address</key>
-		<string>alhoori@niu.edu</string>
+		<string>berezin@cs.niu.edu</string>
 		<key>webpage_address</key>
-		<string></string>
+		<string>http://faculty.cs.niu.edu/~berezin/</string>
 		<key>office_location</key>
-		<string>PM 459</string>
+		<string>PM 354</string>
 		<key>current_classes</key>
 		<array>
 			<dict>
 				<key>class_name</key>
-				<string>CSCI 444</string>
+				<string>CSCI 463</string>
 				<key>office_days_array</key>
 				<array>
 					<string>Monday</string>
 					<string>Wednesday</string>
-					<string>Sunday</string>
 				</array>
 				<key>office_hours_start</key>
 				<array>
-					<string>3:00pm</string>
 					<string>1:00pm</string>
+					<string>4:45pm</string>
 				</array>
 				<key>office_hours_end</key>
 				<array>
-					<string>5:00pm</string>
-					<string>4:00pm</string>
+					<string>3:30pm</string>
+					<string>5:30pm</string>
 				</array>
-				<key>office_room</key>
-				<string>PM 111</string>
+			</dict>
+		</array>
+		<key>research_interests</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Brown, Georgie</string>
+		<key>position</key>
+		<string>Instructor</string>
+		<key>degree</key>
+		<string>M.S., Northern Illinois University</string>
+		<key>email_address</key>
+		<string>gbrown@niu.edu</string>
+		<key>webpage_address</key>
+		<string>http://faculty.cs.niu.edu/~gbrown/</string>
+		<key>office_location</key>
+		<string>PM 556</string>
+		<key>current_classes</key>
+		<array>
+			<dict>
+				<key>class_name</key>
+				<string>CSCI 428/628</string>
+				<key>office_days_array</key>
+				<array>
+					<string>Tuesday</string>
+					<string>Thursday</string>
+				</array>
+				<key>office_hours_start</key>
+				<array>
+					<string>9:00am</string>
+				</array>
+				<key>office_hours_end</key>
+				<array>
+					<string>9:25am</string>
+				</array>
 			</dict>
 			<dict>
 				<key>class_name</key>
-				<string>CSCI 333</string>
+				<string>CSCI 466/566</string>
+				<key>office_days_array</key>
+				<array>
+					<string>Wednesday</string>
+				</array>
+				<key>office_hours_start</key>
+				<array>
+					<string>9:00am</string>
+				</array>
+				<key>office_hours_end</key>
+				<array>
+					<string>12:00pm</string>
+				</array>
+			</dict>
+		</array>
+		<key>research_interests</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Byrnes, Amy</string>
+		<key>position</key>
+		<string>Instructor</string>
+		<key>degree</key>
+		<string>M.S., Northern Illinois University</string>
+		<key>email_address</key>
+		<string>abyrnes@niu.edu</string>
+		<key>webpage_address</key>
+		<string>http://faculty.cs.niu.edu/~byrnes/</string>
+		<key>office_location</key>
+		<string>PM 552</string>
+		<key>current_classes</key>
+		<array>
+			<dict>
+				<key>class_name</key>
+				<string>CSCI 240</string>
 				<key>office_days_array</key>
 				<array>
 					<string>Tuesday</string>
@@ -96,15 +177,1402 @@ Big Data Analytics Social Media Mining Human Centered Computing</string>
 				</array>
 				<key>office_hours_end</key>
 				<array>
-					<string>2:00pm</string>
+					<string>1:00pm</string>
 				</array>
-				<key>office_room</key>
-				<string>PM 123</string>
+			</dict>
+			<dict>
+				<key>class_name</key>
+				<string>CSCI 322/522</string>
+				<key>office_days_array</key>
+				<array>
+					<string>Tuesday</string>
+					<string>Thursday</string>
+				</array>
+				<key>office_hours_start</key>
+				<array>
+					<string>11:00am</string>
+				</array>
+				<key>office_hours_end</key>
+				<array>
+					<string>1:00pm</string>
+				</array>
 			</dict>
 		</array>
 		<key>research_interests</key>
-		<string>Data Science
-Big Data Analytics Social Media Mining Human Centered Computing</string>
+		<string></string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Decker, Geoffrey</string>
+		<key>position</key>
+		<string>Instructor</string>
+		<key>degree</key>
+		<string>M.S., Northern Illinois University</string>
+		<key>email_address</key>
+		<string>gdecker@niu.edu</string>
+		<key>webpage_address</key>
+		<string>http://faculty.cs.niu.edu/~decker</string>
+		<key>office_location</key>
+		<string>PM 463</string>
+		<key>current_classes</key>
+		<array>
+			<dict>
+				<key>class_name</key>
+				<string>CSCI 465/565</string>
+				<key>office_days_array</key>
+				<array>
+					<string>Monday</string>
+					<string>Wednesday</string>
+					<string>Friday</string>
+				</array>
+				<key>office_hours_start</key>
+				<array>
+					<string>10:00am</string>
+				</array>
+				<key>office_hours_end</key>
+				<array>
+					<string>11:00pm</string>
+				</array>
+			</dict>
+			<dict>
+				<key>class_name</key>
+				<string>CSCI 663</string>
+				<key>office_days_array</key>
+				<array>
+					<string>Monday</string>
+					<string>Wednesday</string>
+				</array>
+				<key>office_hours_start</key>
+				<array>
+					<string>1:00pm</string>
+				</array>
+				<key>office_hours_end</key>
+				<array>
+					<string>2:00pm</string>
+				</array>
+			</dict>
+		</array>
+		<key>research_interests</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Duffin, Kirk</string>
+		<key>position</key>
+		<string>Director of Graduate Studies and Graduate Advisor | Associate Professor</string>
+		<key>degree</key>
+		<string>Ph.D., Brigham Young University</string>
+		<key>email_address</key>
+		<string>duffin@cs.niu.edu</string>
+		<key>webpage_address</key>
+		<string>http://graphics.cs.niu.edu/people/duffin</string>
+		<key>office_location</key>
+		<string>PM 567</string>
+		<key>current_classes</key>
+		<array>
+			<dict>
+				<key>class_name</key>
+				<string>CSCI 688</string>
+				<key>office_days_array</key>
+				<array>
+					<string>Monday</string>
+					<string>Friday</string>
+				</array>
+				<key>office_hours_start</key>
+				<array>
+					<string>11:00am</string>
+				</array>
+				<key>office_hours_end</key>
+				<array>
+					<string>1:00pm</string>
+				</array>
+			</dict>
+			<dict>
+				<key>class_name</key>
+				<string>CSCI 689</string>
+				<key>office_days_array</key>
+				<array>
+					<string>Tuesday</string>
+					<string>Thursday</string>
+				</array>
+				<key>office_hours_start</key>
+				<array>
+					<string>10:45am</string>
+					<string>1:45pm</string>
+					<string>3:00pm</string>
+				</array>
+				<key>office_hours_end</key>
+				<array>
+					<string>12:30pm</string>
+					<string>3:00pm</string>
+					<string>5:00pm</string>
+				</array>
+			</dict>
+		</array>
+		<key>research_interests</key>
+        <string>Computer Graphics
+Computer Vision
+Scientific Visualization
+Spatio-temporal Data Structures</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Ege, Raimund K.</string>
+		<key>position</key>
+		<string>Associate Professor</string>
+		<key>degree</key>
+		<string>Ph.D., Oregon Graduate Institute for Science &amp; Technology</string>
+		<key>email_address</key>
+		<string>ege@niu.edu</string>
+		<key>webpage_address</key>
+		<string>http://faculty.cs.niu.edu/~ege</string>
+		<key>office_location</key>
+		<string>PM 566</string>
+		<key>current_classes</key>
+		<array>
+			<dict>
+				<key>class_name</key>
+				<string>CSCI 330</string>
+				<key>office_days_array</key>
+				<array>
+					<string>Tuesday</string>
+					<string>Thursday</string>
+				</array>
+				<key>office_hours_start</key>
+				<array>
+					<string>12:15pm</string>
+				</array>
+				<key>office_hours_end</key>
+				<array>
+					<string>1:15pm</string>
+				</array>
+			</dict>
+			<dict>
+				<key>class_name</key>
+				<string>CSCI 467/567</string>
+				<key>office_days_array</key>
+				<array>
+					<string>Tuesday</string>
+					<string>Thursday</string>
+				</array>
+				<key>office_hours_start</key>
+				<array>
+					<string>12:15pm</string>
+				</array>
+				<key>office_hours_end</key>
+				<array>
+					<string>1:15pm</string>
+				</array>
+			</dict>
+		</array>
+		<key>research_interests</key>
+        <string>Secure System Architecture
+Security Models and Frameworks
+Object-Oriented Programming</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Freedman, Reva</string>
+		<key>position</key>
+		<string>Associate Professor</string>
+		<key>degree</key>
+		<string>Ph.D., Northwestern University</string>
+		<key>email_address</key>
+		<string>rfreedman@niu.edu</string>
+		<key>webpage_address</key>
+		<string>http://faculty.cs.niu.edu/~freedman/</string>
+		<key>office_location</key>
+		<string>PM 558</string>
+		<key>current_classes</key>
+		<array>
+			<dict>
+				<key>class_name</key>
+				<string>CSCI 470/680</string>
+				<key>office_days_array</key>
+				<array>
+					<string>Tuesday</string>
+					<string>Thursday</string>
+				</array>
+				<key>office_hours_start</key>
+				<array>
+					<string>3:00pm</string>
+				</array>
+				<key>office_hours_end</key>
+				<array>
+					<string>4:45pm</string>
+				</array>
+			</dict>
+			<dict>
+				<key>class_name</key>
+				<string>CSCI 480/580</string>
+				<key>office_days_array</key>
+				<array>
+					<string>Tuesday</string>
+					<string>Thursday</string>
+				</array>
+				<key>office_hours_start</key>
+				<array>
+					<string>3:00pm</string>
+				</array>
+				<key>office_hours_end</key>
+				<array>
+					<string>4:45pm</string>
+				</array>
+			</dict>
+		</array>
+		<key>research_interests</key>
+        <string>Intelligent Tutoring Systems
+Discourse and Dialogue Generation
+Reactive Planning</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Giabbanelli, Philippe</string>
+		<key>position</key>
+		<string>Assistant Professor</string>
+		<key>degree</key>
+		<string>Ph.D., Simon Fraser University</string>
+		<key>email_address</key>
+		<string>giabba@cs.niu.edu</string>
+		<key>webpage_address</key>
+		<string>http://faculty.cs.niu.edu/~giabba</string>
+		<key>office_location</key>
+		<string>PM 461</string>
+		<key>current_classes</key>
+		<array>
+			<dict>
+				<key>class_name</key>
+				<string>CSCI 330</string>
+				<key>office_days_array</key>
+				<array>
+					<string>Tuesday</string>
+					<string>Thursday</string>
+				</array>
+				<key>office_hours_start</key>
+				<array>
+					<string>10:45am</string>
+				</array>
+				<key>office_hours_end</key>
+				<array>
+					<string>12:15pm</string>
+				</array>
+			</dict>
+			<dict>
+				<key>class_name</key>
+				<string>CSCI 688</string>
+				<key>office_days_array</key>
+				<array>
+					<string>Tuesday</string>
+					<string>Thursday</string>
+				</array>
+				<key>office_hours_start</key>
+				<array>
+					<string>1:45pm</string>
+				</array>
+				<key>office_hours_end</key>
+				<array>
+					<string>2:15pm</string>
+				</array>
+			</dict>
+		</array>
+		<key>research_interests</key>
+        <string>Computational Intelligence in Medicine
+Data Mining
+Modelling and Simulation
+Public Health Informatics</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Hegde, Shankar</string>
+		<key>position</key>
+		<string>Visiting Assistant Professor</string>
+		<key>degree</key>
+		<string>Ph.D., University of Saskatchewan</string>
+		<key>email_address</key>
+		<string>shegde@niu.edu</string>
+		<key>webpage_address</key>
+		<string>http://faculty.cs.niu.edu/~hegde/</string>
+		<key>office_location</key>
+		<string></string>
+		<key>current_classes</key>
+		<array>
+			<dict>
+				<key>class_name</key>
+				<string>No Classes</string>
+				<key>office_days_array</key>
+				<array>
+					<string></string>
+				</array>
+				<key>office_hours_start</key>
+				<array>
+					<string></string>
+				</array>
+				<key>office_hours_end</key>
+				<array>
+					<string></string>
+				</array>
+			</dict>
+		</array>
+		<key>research_interests</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Hou, Minmei</string>
+		<key>position</key>
+		<string>Associate Professor</string>
+		<key>degree</key>
+		<string>Ph.D., Pennsylvania State University</string>
+		<key>email_address</key>
+		<string>mhou@niu.edu</string>
+		<key>webpage_address</key>
+		<string></string>
+		<key>office_location</key>
+		<string>PM 560</string>
+		<key>current_classes</key>
+		<array>
+			<dict>
+				<key>class_name</key>
+				<string>CSCI 350</string>
+				<key>office_days_array</key>
+				<array>
+					<string>Tuesday</string>
+					<string>Thursday</string>
+				</array>
+				<key>office_hours_start</key>
+				<array>
+					<string>1:45pm</string>
+				</array>
+				<key>office_hours_end</key>
+				<array>
+					<string>3:45pm</string>
+				</array>
+			</dict>
+			<dict>
+				<key>class_name</key>
+				<string>CSCI 490</string>
+				<key>office_days_array</key>
+				<array>
+					<string>Tuesday</string>
+					<string>Thursday</string>
+				</array>
+				<key>office_hours_start</key>
+				<array>
+					<string>1:45pm</string>
+				</array>
+				<key>office_hours_end</key>
+				<array>
+					<string>3:45pm</string>
+				</array>
+			</dict>
+		</array>
+		<key>research_interests</key>
+        <string>Bioinformatics
+Data Mining
+Text Mining
+Algorithm Design and Analysis
+</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Hutchins, Harry</string>
+		<key>position</key>
+		<string>Instructor</string>
+		<key>degree</key>
+		<string>Ph.D., University of Chicago</string>
+		<key>email_address</key>
+		<string>t90hch1@cs.niu.edu</string>
+		<key>webpage_address</key>
+		<string>http://faculty.cs.niu.edu/~hou</string>
+		<key>office_location</key>
+		<string>PM 465</string>
+		<key>current_classes</key>
+		<array>
+			<dict>
+				<key>class_name</key>
+				<string>CSCI 275</string>
+				<key>office_days_array</key>
+				<array>
+					<string>Tuesday</string>
+					<string>Friday</string>
+				</array>
+				<key>office_hours_start</key>
+				<array>
+					<string>12:00pm</string>
+				</array>
+				<key>office_hours_end</key>
+				<array>
+					<string>4:00pm</string>
+				</array>
+			</dict>
+			<dict>
+				<key>class_name</key>
+				<string>CSCI 360</string>
+				<key>office_days_array</key>
+				<array>
+					<string>Tuesday</string>
+					<string>Friday</string>
+				</array>
+				<key>office_hours_start</key>
+				<array>
+					<string>12:00pm</string>
+				</array>
+				<key>office_hours_end</key>
+				<array>
+					<string>4:00pm</string>
+				</array>
+			</dict>
+			<dict>
+				<key>class_name</key>
+				<string>CSCI 473/680</string>
+				<key>office_days_array</key>
+				<array>
+					<string>Tuesday</string>
+					<string>Friday</string>
+				</array>
+				<key>office_hours_start</key>
+				<array>
+					<string>12:00pm</string>
+				</array>
+				<key>office_hours_end</key>
+				<array>
+					<string>4:00pm</string>
+				</array>
+			</dict>
+		</array>
+		<key>research_interests</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Karonis, Nicholas</string>
+		<key>position</key>
+		<string>Chair | Professor</string>
+		<key>degree</key>
+		<string>Ph.D., Syracuse University</string>
+		<key>email_address</key>
+		<string>karonis@niu.edu</string>
+		<key>webpage_address</key>
+		<string>http://faculty.cs.niu.edu/~karonis/homepage.html</string>
+		<key>office_location</key>
+		<string></string>
+		<key>current_classes</key>
+		<array>
+			<dict>
+				<key>class_name</key>
+				<string>No Classes</string>
+				<key>office_days_array</key>
+				<array>
+					<string></string>
+				</array>
+				<key>office_hours_start</key>
+				<array>
+					<string></string>
+				</array>
+				<key>office_hours_end</key>
+				<array>
+					<string></string>
+				</array>
+			</dict>
+		</array>
+		<key>research_interests</key>
+		<string>High Performance Grid Computing</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Lehuta, Jonathan</string>
+		<key>position</key>
+		<string>Instructor</string>
+		<key>degree</key>
+		<string>M.S., Northern Illinois University</string>
+		<key>email_address</key>
+		<string>lehuta@niu.edu</string>
+		<key>webpage_address</key>
+		<string></string>
+		<key>office_location</key>
+		<string>PM 574</string>
+		<key>current_classes</key>
+		<array>
+			<dict>
+				<key>class_name</key>
+				<string>CSCI 330</string>
+				<key>office_days_array</key>
+				<array>
+					<string>Monday</string>
+					<string>Wednesday</string>
+				</array>
+				<key>office_hours_start</key>
+				<array>
+					<string>10:00am</string>
+				</array>
+				<key>office_hours_end</key>
+				<array>
+					<string>11:00am</string>
+				</array>
+			</dict>
+			<dict>
+				<key>class_name</key>
+				<string>CSCI 466/566</string>
+				<key>office_days_array</key>
+				<array>
+					<string>Monday</string>
+					<string>Wednesday</string>
+				</array>
+				<key>office_hours_start</key>
+				<array>
+					<string>1:00pm</string>
+				</array>
+				<key>office_hours_end</key>
+				<array>
+					<string>2:00pm</string>
+				</array>
+			</dict>
+		</array>
+		<key>research_interests</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Leon, James</string>
+		<key>position</key>
+		<string>Instructor</string>
+		<key>degree</key>
+		<string>Ed.D., Northern Illinois University</string>
+		<key>email_address</key>
+		<string>jimleon@cs.niu.edu</string>
+		<key>webpage_address</key>
+		<string>http://drjimleon.com/home/</string>
+		<key>office_location</key>
+		<string>PM 565</string>
+		<key>current_classes</key>
+		<array>
+			<dict>
+				<key>class_name</key>
+				<string>CSCI 330</string>
+				<key>office_days_array</key>
+				<array>
+					<string>Tuesday</string>
+					<string>Thursday</string>
+				</array>
+				<key>office_hours_start</key>
+				<array>
+					<string>3:15pm</string>
+				</array>
+				<key>office_hours_end</key>
+				<array>
+					<string>4:00pm</string>
+				</array>
+			</dict>
+			<dict>
+				<key>class_name</key>
+				<string>CSCI 360</string>
+				<key>office_days_array</key>
+				<array>
+					<string>Tuesday</string>
+					<string>Thursday</string>
+				</array>
+				<key>office_hours_start</key>
+				<array>
+					<string>6:15pm</string>
+				</array>
+				<key>office_hours_end</key>
+				<array>
+					<string>7:00pm</string>
+				</array>
+			</dict>
+			<dict>
+				<key>class_name</key>
+				<string>CSCI 659</string>
+				<key>office_days_array</key>
+				<array>
+					<string>Tuesday</string>
+					<string>Thursday</string>
+				</array>
+				<key>office_hours_start</key>
+				<array>
+					<string>6:15pm</string>
+				</array>
+				<key>office_hours_end</key>
+				<array>
+					<string>7:00pm</string>
+				</array>
+			</dict>
+		</array>
+		<key>research_interests</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>McMahon, Kurt</string>
+		<key>position</key>
+		<string>Instructor</string>
+		<key>degree</key>
+		<string>M.S., Northern Illinois University</string>
+		<key>email_address</key>
+		<string>kmcmahon@niu.edu</string>
+		<key>webpage_address</key>
+		<string>http://faculty.cs.niu.edu/~mcmahon/</string>
+		<key>office_location</key>
+		<string>PM 570</string>
+		<key>current_classes</key>
+		<array>
+			<dict>
+				<key>class_name</key>
+				<string>CSCI 241</string>
+				<key>office_days_array</key>
+				<array>
+					<string>Monday</string>
+					<string>Wednesday</string>
+					<string>Friday</string>
+				</array>
+				<key>office_hours_start</key>
+				<array>
+					<string>10:00am</string>
+				</array>
+				<key>office_hours_end</key>
+				<array>
+					<string>11:00am</string>
+				</array>
+			</dict>
+			<dict>
+				<key>class_name</key>
+				<string>CSCI 428/628</string>
+				<key>office_days_array</key>
+				<array>
+					<string>Monday</string>
+					<string>Wednesday</string>
+					<string>Friday</string>
+				</array>
+				<key>office_hours_start</key>
+				<array>
+					<string>10:00am</string>
+				</array>
+				<key>office_hours_end</key>
+				<array>
+					<string>11:00am</string>
+				</array>
+			</dict>
+		</array>
+		<key>research_interests</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Musich, Margie Brooks</string>
+		<key>position</key>
+		<string>Instructor</string>
+		<key>degree</key>
+		<string>M.S., Northern Illinois University</string>
+		<key>email_address</key>
+		<string>mmusich@niu.edu</string>
+		<key>webpage_address</key>
+		<string>http://faculty.cs.niu.edu/~musich/</string>
+		<key>office_location</key>
+		<string>PM 568</string>
+		<key>current_classes</key>
+		<array>
+			<dict>
+				<key>class_name</key>
+				<string>CSCI 240</string>
+				<key>office_days_array</key>
+				<array>
+					<string>Monday</string>
+					<string>Wednesday</string>
+				</array>
+				<key>office_hours_start</key>
+				<array>
+					<string>9:30am</string>
+				</array>
+				<key>office_hours_end</key>
+				<array>
+					<string>11:30am</string>
+				</array>
+			</dict>
+			<dict>
+				<key>class_name</key>
+				<string>CSCI 241</string>
+				<key>office_days_array</key>
+				<array>
+					<string>Monday</string>
+					<string>Wednesday</string>
+				</array>
+				<key>office_hours_start</key>
+				<array>
+					<string>9:30am</string>
+				</array>
+				<key>office_hours_end</key>
+				<array>
+					<string>11:30am</string>
+				</array>
+			</dict>
+		</array>
+		<key>research_interests</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Onyuksel, Ibrahim</string>
+		<key>position</key>
+		<string>Professor</string>
+		<key>degree</key>
+		<string>Ph.D., University of Michigan</string>
+		<key>email_address</key>
+		<string>onyuksel@niu.edu</string>
+		<key>webpage_address</key>
+		<string>http://tiger.cs.niu.edu/~onyuksel</string>
+		<key>office_location</key>
+		<string>PM 572</string>
+		<key>current_classes</key>
+		<array>
+			<dict>
+				<key>class_name</key>
+				<string>CSCI 631</string>
+				<key>office_days_array</key>
+				<array>
+					<string>Tuesday</string>
+					<string>Thursday</string>
+				</array>
+				<key>office_hours_start</key>
+				<array>
+					<string>1:00pm</string>
+					<string>3:15pm</string>
+				</array>
+				<key>office_hours_end</key>
+				<array>
+					<string>2:00pm</string>
+					<string>4:15pm</string>
+				</array>
+			</dict>
+		</array>
+		<key>research_interests</key>
+		<string>Performance Evaluation of Computer Systems</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Papka, Michael</string>
+		<key>position</key>
+		<string>Associate Professor</string>
+		<key>degree</key>
+		<string>Ph.D., University of Chicago</string>
+		<key>email_address</key>
+		<string>papka@niu.edu</string>
+		<key>webpage_address</key>
+		<string>http://faculty.cs.niu.edu/~papka</string>
+		<key>office_location</key>
+		<string>PM 559</string>
+		<key>current_classes</key>
+		<array>
+			<dict>
+				<key>class_name</key>
+				<string>CSCI 340</string>
+				<key>office_days_array</key>
+				<array>
+					<string>Monday</string>
+					<string>Wednesday</string>
+				</array>
+				<key>office_hours_start</key>
+				<array>
+					<string>1:00pm</string>
+					<string>10:00am</string>
+				</array>
+				<key>office_hours_end</key>
+				<array>
+					<string>2:00pm</string>
+					<string>11:00am</string>
+				</array>
+			</dict>
+		</array>
+		<key>research_interests</key>
+        <string>High Performance Computing
+Scientific Visualization and Analysis
+Performance Visualization
+Internet of Things
+Advanced Displays and Interaction</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Rogness, Daniel</string>
+		<key>position</key>
+		<string>Instructor</string>
+		<key>degree</key>
+		<string>M.S., Northern Illinois University</string>
+		<key>email_address</key>
+		<string>drogness1@niu.edu</string>
+		<key>webpage_address</key>
+		<string>http://faculty.cs.niu.edu/~rogness/</string>
+		<key>office_location</key>
+		<string>PM 471</string>
+		<key>current_classes</key>
+		<array>
+			<dict>
+				<key>class_name</key>
+				<string>CSCI 241</string>
+				<key>office_days_array</key>
+				<array>
+					<string>Tuesday</string>
+					<string>Thursday</string>
+				</array>
+				<key>office_hours_start</key>
+				<array>
+					<string>10:00am</string>
+					<string>1:00pm</string>
+				</array>
+				<key>office_hours_end</key>
+				<array>
+					<string>11:00am</string>
+					<string>2:00pm</string>
+				</array>
+			</dict>
+		</array>
+		<key>research_interests</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Rush, Kaisone</string>
+		<key>position</key>
+		<string>Instructor</string>
+		<key>degree</key>
+		<string>M.S., Northern Illinois University</string>
+		<key>email_address</key>
+		<string>krush@niu.edu</string>
+		<key>webpage_address</key>
+		<string>http://www.niu.edu/krush/</string>
+		<key>office_location</key>
+		<string>PM 469</string>
+		<key>current_classes</key>
+		<array>
+			<dict>
+				<key>class_name</key>
+				<string>CSCI 321/521</string>
+				<key>office_days_array</key>
+				<array>
+					<string>Monday</string>
+					<string>Wednesday</string>
+					<string>Friday</string>
+				</array>
+				<key>office_hours_start</key>
+				<array>
+					<string>2:00pm</string>
+				</array>
+				<key>office_hours_end</key>
+				<array>
+					<string>3:15pm</string>
+				</array>
+			</dict>
+			<dict>
+				<key>class_name</key>
+				<string>CSCI 467/567</string>
+				<key>office_days_array</key>
+				<array>
+					<string>Monday</string>
+					<string>Wednesday</string>
+					<string>Friday</string>
+				</array>
+				<key>office_hours_start</key>
+				<array>
+					<string>2:00pm</string>
+				</array>
+				<key>office_hours_end</key>
+				<array>
+					<string>3:15pm</string>
+				</array>
+			</dict>
+		</array>
+		<key>research_interests</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Wang, Yih-Chen (Steve)</string>
+		<key>position</key>
+		<string>Visiting Assistant Professor</string>
+		<key>degree</key>
+		<string>Ph.D., Illinois Institute of Technology</string>
+		<key>email_address</key>
+		<string>swang@cs.niu.edu</string>
+		<key>webpage_address</key>
+		<string></string>
+		<key>office_location</key>
+		<string></string>
+		<key>current_classes</key>
+		<array>
+			<dict>
+				<key>class_name</key>
+				<string>No Classes</string>
+				<key>office_days_array</key>
+				<array>
+					<string></string>
+				</array>
+				<key>office_hours_start</key>
+				<array>
+					<string></string>
+				</array>
+				<key>office_hours_end</key>
+				<array>
+					<string></string>
+				</array>
+			</dict>
+		</array>
+		<key>research_interests</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Winans, John</string>
+		<key>position</key>
+		<string>Instructor</string>
+		<key>degree</key>
+		<string>M.S., Northern Illinois University</string>
+		<key>email_address</key>
+		<string>jwinans@niu.edu</string>
+		<key>webpage_address</key>
+		<string>http://faculty.cs.niu.edu/~winans/</string>
+		<key>office_location</key>
+		<string></string>
+		<key>current_classes</key>
+		<array>
+			<dict>
+				<key>class_name</key>
+				<string>No Classes</string>
+				<key>office_days_array</key>
+				<array>
+					<string></string>
+				</array>
+				<key>office_hours_start</key>
+				<array>
+					<string></string>
+				</array>
+				<key>office_hours_end</key>
+				<array>
+					<string></string>
+				</array>
+			</dict>
+		</array>
+		<key>research_interests</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Yassin, Hania</string>
+		<key>position</key>
+		<string>Instructor</string>
+		<key>degree</key>
+		<string>M.S., Northern Illinois University</string>
+		<key>email_address</key>
+		<string>yassin@cs.niu.edu</string>
+		<key>webpage_address</key>
+		<string></string>
+		<key>office_location</key>
+		<string></string>
+		<key>current_classes</key>
+		<array>
+			<dict>
+				<key>class_name</key>
+				<string>No Classes</string>
+				<key>office_days_array</key>
+				<array>
+					<string></string>
+				</array>
+				<key>office_hours_start</key>
+				<array>
+					<string></string>
+				</array>
+				<key>office_hours_end</key>
+				<array>
+					<string></string>
+				</array>
+			</dict>
+		</array>
+		<key>research_interests</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Zhou, Jie</string>
+		<key>position</key>
+		<string>Associate Professor</string>
+		<key>degree</key>
+		<string>Ph.D., Concordia University, Canada</string>
+		<key>email_address</key>
+		<string>jzhou@niu.edu</string>
+		<key>webpage_address</key>
+		<string>http://faculty.cs.niu.edu/~zhou/</string>
+		<key>office_location</key>
+		<string></string>
+		<key>current_classes</key>
+		<array>
+			<dict>
+				<key>class_name</key>
+				<string>No Classes</string>
+				<key>office_days_array</key>
+				<array>
+					<string></string>
+				</array>
+				<key>office_hours_start</key>
+				<array>
+					<string></string>
+				</array>
+				<key>office_hours_end</key>
+				<array>
+					<string></string>
+				</array>
+			</dict>
+		</array>
+		<key>research_interests</key>
+        <string>Pattern Recognition
+Computational Intelligence in Medicine
+Bioimage Informatics</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Angotti, Rodney</string>
+		<key>position</key>
+		<string>Professor Emeritus</string>
+		<key>degree</key>
+		<string>Ph.D., University of Pittsburgh</string>
+		<key>email_address</key>
+		<string></string>
+		<key>webpage_address</key>
+		<string></string>
+		<key>office_location</key>
+		<string></string>
+		<key>current_classes</key>
+		<array>
+			<dict>
+				<key>class_name</key>
+				<string>No Classes</string>
+				<key>office_days_array</key>
+				<array>
+					<string></string>
+				</array>
+				<key>office_hours_start</key>
+				<array>
+					<string></string>
+				</array>
+				<key>office_hours_end</key>
+				<array>
+					<string></string>
+				</array>
+			</dict>
+		</array>
+		<key>research_interests</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Chung, Sei-Jong</string>
+		<key>position</key>
+		<string>Associate Professor, retired</string>
+		<key>degree</key>
+		<string>Ph.D., University of Iowa</string>
+		<key>email_address</key>
+		<string>sjchung@cs.niu.edu</string>
+		<key>webpage_address</key>
+		<string></string>
+		<key>office_location</key>
+		<string></string>
+		<key>current_classes</key>
+		<array>
+			<dict>
+				<key>class_name</key>
+				<string>No Classes</string>
+				<key>office_days_array</key>
+				<array>
+					<string></string>
+				</array>
+				<key>office_hours_start</key>
+				<array>
+					<string></string>
+				</array>
+				<key>office_hours_end</key>
+				<array>
+					<string></string>
+				</array>
+			</dict>
+		</array>
+		<key>research_interests</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Glickfeld, Barnett</string>
+		<key>position</key>
+		<string>Associate Professor Emeritus</string>
+		<key>degree</key>
+		<string>Ph.D., Columbia University</string>
+		<key>email_address</key>
+		<string>bglickfeld@niu.edu</string>
+		<key>webpage_address</key>
+		<string></string>
+		<key>office_location</key>
+		<string></string>
+		<key>current_classes</key>
+		<array>
+			<dict>
+				<key>class_name</key>
+				<string>No Classes</string>
+				<key>office_days_array</key>
+				<array>
+					<string></string>
+				</array>
+				<key>office_hours_start</key>
+				<array>
+					<string></string>
+				</array>
+				<key>office_hours_end</key>
+				<array>
+					<string></string>
+				</array>
+			</dict>
+		</array>
+		<key>research_interests</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Davis, Kathi Hogshead</string>
+		<key>position</key>
+		<string>Associate Professor Emerita</string>
+		<key>degree</key>
+		<string>Ph.D., Illinois Institute of Technology</string>
+		<key>email_address</key>
+		<string>kdavis@cs.niu.edu</string>
+		<key>webpage_address</key>
+		<string>http://faculty.cs.niu.edu/~davis/</string>
+		<key>office_location</key>
+		<string></string>
+		<key>current_classes</key>
+		<array>
+			<dict>
+				<key>class_name</key>
+				<string>No Classes</string>
+				<key>office_days_array</key>
+				<array>
+					<string></string>
+				</array>
+				<key>office_hours_start</key>
+				<array>
+					<string></string>
+				</array>
+				<key>office_hours_end</key>
+				<array>
+					<string></string>
+				</array>
+			</dict>
+		</array>
+		<key>research_interests</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Henry, George &quot;Jim&quot;</string>
+		<key>position</key>
+		<string>Associate Professor Emeritus</string>
+		<key>degree</key>
+		<string>Ed.D., Northern Illinois University</string>
+		<key>email_address</key>
+		<string>henry@cs.niu.edu</string>
+		<key>webpage_address</key>
+		<string>http://faculty.cs.niu.edu/~henry/</string>
+		<key>office_location</key>
+		<string></string>
+		<key>current_classes</key>
+		<array>
+			<dict>
+				<key>class_name</key>
+				<string>No Classes</string>
+				<key>office_days_array</key>
+				<array>
+					<string></string>
+				</array>
+				<key>office_hours_start</key>
+				<array>
+					<string></string>
+				</array>
+				<key>office_hours_end</key>
+				<array>
+					<string></string>
+				</array>
+			</dict>
+		</array>
+		<key>research_interests</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Jeffrey, H. Joel</string>
+		<key>position</key>
+		<string>Professor Emeritus</string>
+		<key>degree</key>
+		<string>Ph.D., University of Colorado</string>
+		<key>email_address</key>
+		<string>jeffrey@cs.niu.edu</string>
+		<key>webpage_address</key>
+		<string></string>
+		<key>office_location</key>
+		<string></string>
+		<key>current_classes</key>
+		<array>
+			<dict>
+				<key>class_name</key>
+				<string>No Classes</string>
+				<key>office_days_array</key>
+				<array>
+					<string></string>
+				</array>
+				<key>office_hours_start</key>
+				<array>
+					<string></string>
+				</array>
+				<key>office_hours_end</key>
+				<array>
+					<string></string>
+				</array>
+			</dict>
+		</array>
+		<key>research_interests</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Rannie, Robert</string>
+		<key>position</key>
+		<string>Professor Emeritus</string>
+		<key>degree</key>
+		<string>Ph.D., Penn State University</string>
+		<key>email_address</key>
+		<string>rpraniie@gmail.com</string>
+		<key>webpage_address</key>
+		<string>http://faculty.cs.niu.edu/~rannie/</string>
+		<key>office_location</key>
+		<string></string>
+		<key>current_classes</key>
+		<array>
+			<dict>
+				<key>class_name</key>
+				<string>No Classes</string>
+				<key>office_days_array</key>
+				<array>
+					<string></string>
+				</array>
+				<key>office_hours_start</key>
+				<array>
+					<string></string>
+				</array>
+				<key>office_hours_end</key>
+				<array>
+					<string></string>
+				</array>
+			</dict>
+		</array>
+		<key>research_interests</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Rickert, Neil</string>
+		<key>position</key>
+		<string>Professor Emeritus</string>
+		<key>degree</key>
+		<string>Ph.D., Yale University</string>
+		<key>email_address</key>
+		<string>rickert@cs.niu.edu</string>
+		<key>webpage_address</key>
+		<string>http://faculty.cs.niu.edu/~rickert/</string>
+		<key>office_location</key>
+		<string></string>
+		<key>current_classes</key>
+		<array>
+			<dict>
+				<key>class_name</key>
+				<string>No Classes</string>
+				<key>office_days_array</key>
+				<array>
+					<string></string>
+				</array>
+				<key>office_hours_start</key>
+				<array>
+					<string></string>
+				</array>
+				<key>office_hours_end</key>
+				<array>
+					<string></string>
+				</array>
+			</dict>
+		</array>
+		<key>research_interests</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Stack, Michael</string>
+		<key>position</key>
+		<string>Instructor, retired</string>
+		<key>degree</key>
+		<string>M.S., Northern Illinois University</string>
+		<key>email_address</key>
+		<string>mstack@kcats.org</string>
+		<key>webpage_address</key>
+		<string>http://www.kcats.org/</string>
+		<key>office_location</key>
+		<string></string>
+		<key>current_classes</key>
+		<array>
+			<dict>
+				<key>class_name</key>
+				<string>No Classes</string>
+				<key>office_days_array</key>
+				<array>
+					<string></string>
+				</array>
+				<key>office_hours_start</key>
+				<array>
+					<string></string>
+				</array>
+				<key>office_hours_end</key>
+				<array>
+					<string></string>
+				</array>
+			</dict>
+		</array>
+		<key>research_interests</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Zerwekh, Robert</string>
+		<key>position</key>
+		<string>Associate Professor Emeritus</string>
+		<key>degree</key>
+		<string>Ph.D., University of Illinois</string>
+		<key>email_address</key>
+		<string>zerwekh@cs.niu.edu</string>
+		<key>webpage_address</key>
+		<string>http://www.seasite.niu.edu/zerwekh/</string>
+		<key>office_location</key>
+		<string></string>
+		<key>current_classes</key>
+		<array>
+			<dict>
+				<key>class_name</key>
+				<string>No Classes</string>
+				<key>office_days_array</key>
+				<array>
+					<string></string>
+				</array>
+				<key>office_hours_start</key>
+				<array>
+					<string></string>
+				</array>
+				<key>office_hours_end</key>
+				<array>
+					<string></string>
+				</array>
+			</dict>
+		</array>
+		<key>research_interests</key>
+		<string></string>
 	</dict>
 </array>
 </plist>

@@ -57,7 +57,6 @@ class TableViewController: UITableViewController, UISearchResultsUpdating {
         if let path = Bundle.main.path(forResource: "CSDirectory", ofType: "plist") {
             if let facultyArray = NSArray(contentsOfFile: path) as? [[String: Any]] {
                 for dict in facultyArray {
-                    let departmentID = dict["department_ID"] as! String
                     let name = dict["name"] as! String
                     let position = dict["position"] as! String
                     let degree = dict["degree"] as! String
@@ -73,14 +72,13 @@ class TableViewController: UITableViewController, UISearchResultsUpdating {
                         let officeDays = i["office_days_array"] as! [String]
                         let officeHoursStart = i["office_hours_start"] as! [String]
                         let officeHoursEnd = i["office_hours_end"] as! [String]
-                        let officeRoom = i["office_room"] as! String
                         
-                        classesObjects.append(Classes(class_name: className, office_days_array: officeDays, office_hours_start: officeHoursStart, office_hours_end: officeHoursEnd, office_room: officeRoom))
+                        classesObjects.append(Classes(class_name: className, office_days_array: officeDays, office_hours_start: officeHoursStart, office_hours_end: officeHoursEnd))
                     }
                     
                     let researchInterests = dict["research_interests"] as! String
                     
-                    facultyObjects.append(CSFaculty(department_ID: departmentID, name: name, position: position, degree: degree, email_address: emailAddress, webpage_address: webpageAddress, office_location: officeLocation, current_classes: classesObjects, research_interests: researchInterests))
+                    facultyObjects.append(CSFaculty(name: name, position: position, degree: degree, email_address: emailAddress, webpage_address: webpageAddress, office_location: officeLocation, current_classes: classesObjects, research_interests: researchInterests))
                     
                 } // end for loop
             } // end facultyArray
@@ -90,11 +88,11 @@ class TableViewController: UITableViewController, UISearchResultsUpdating {
     // MARK: - Availability Functions
     
     /**
-     * Determines the availability of each Faculty member
+     * Description - Determines the availability of each Faculty member
      *
-     * - parameter start: Officehour's start time array
-     * - parameter end: Officehour's end time array
-     * - parameter days: Officeday array
+     * - parameter start: Office hour's start time array
+     * - parameter end: Office hour's end time array
+     * - parameter days: Office day array
      *
      * - returns: Determining whether or not the office hour is available for that given class
      */
@@ -266,18 +264,21 @@ class TableViewController: UITableViewController, UISearchResultsUpdating {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CELL", for: indexPath) as! TableViewCell
         
         for i in faculty.currentClasses {
-            currentClasses += "\(i.className!) "
+            currentClasses += "\(i.className!)\n"
         }
         
         // When there are no office hours for the professor
         cell.cellNameLbl.text = faculty.name
         cell.cellAvailLbl.text = "No Office Hours at this time"
-        cell.cellClassLbl.text = "Classes: \(currentClasses)"
+        cell.cellClassTV.text = "\(currentClasses)"
         
         for i in faculty.currentClasses {
+            if (i.className == "No Classes") {
+                cell.cellAvailLbl.text = ""
+            }
             // When there are office hours for the professor
-            if (checkAvailability(start: i.officeHoursStart, end: i.officeHoursEnd, days: i.officeDays)) {
-                cell.cellClassLbl.isHidden = true
+            // This is assumming the professor does not have two Office Hours scheduled at the same time
+            else if (checkAvailability(start: i.officeHoursStart, end: i.officeHoursEnd, days: i.officeDays)) {
                 cell.cellAvailLbl.text = "Office Hours available for \(i.className!)"
             }
         }
@@ -285,20 +286,17 @@ class TableViewController: UITableViewController, UISearchResultsUpdating {
         return cell
     }
     
-    /*
     // Changes background color for each cell based on its spot on the table
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if indexPath.row % 2 == 0 {
-            cell.backgroundColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1.0) // very light gray
+            cell.backgroundColor = UIColor(red: 0.93, green: 0.93, blue: 0.93, alpha: 1.0) // very light gray
         } else {
             cell.backgroundColor = UIColor.white
         }
     }
-    */
     
     // MARK: - Navigation
-    ////////////////////////////////////////// Navigation //////////////////////////////////////////
-
+    
     /**
      * Sends facultyObjects data to the DetailViewController
      */
@@ -320,7 +318,6 @@ class TableViewController: UITableViewController, UISearchResultsUpdating {
                 }
                 
                 destVC.navigationItem.title = faculty.name
-                destVC.sentData0 = faculty.departmentID
                 destVC.sentData1 = faculty.name
                 destVC.sentData2 = faculty.position
                 destVC.sentData3 = faculty.degree

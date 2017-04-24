@@ -11,7 +11,6 @@
 import UIKit
 
 class CSFaculty: NSObject {
-    var departmentID: String!
     var name: String!
     var position: String!
     var degree: String!
@@ -21,8 +20,7 @@ class CSFaculty: NSObject {
     var currentClasses: [Classes]
     var researchInterests: String?
     
-    init(department_ID: String, name: String, position: String, degree: String, email_address: String, webpage_address: String, office_location: String, current_classes: [Classes], research_interests: String) {
-        self.departmentID = department_ID
+    init(name: String, position: String, degree: String, email_address: String, webpage_address: String, office_location: String, current_classes: [Classes], research_interests: String) {
         self.name = name
         self.position = position
         self.degree = degree
