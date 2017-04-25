@@ -59,6 +59,9 @@ class WebPageViewController: UIViewController {
         webView.reload()
     }
     
+    @IBAction func stopBtnItemClicked(_ sender: UIBarButtonItem) {
+        webView.stopLoading()
+    }
 
     /*
     // MARK: - Navigation
