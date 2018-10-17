@@ -35,7 +35,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var officeDaysTextView: UITextView!
     @IBOutlet weak var officeHoursTextView: UITextView!
     
-    @IBOutlet weak var emailAddressLabel: UILabel!
+    @IBOutlet weak var emailAddressTextView: UITextView!
     @IBOutlet weak var officeLabel: UILabel!
     @IBOutlet weak var officeLocationLabel: UILabel!
 
@@ -71,7 +71,7 @@ class DetailViewController: UIViewController {
             if (i.className != "No Classes" && i.className != "Retired") {
                 className += "\(unpackClassName(cn: i))\n"
                 officeDays += "\(unpackOfficeDays(od: i))\n"
-                officeHours += "\(unpackOfficeHours(oh: i))\n"
+                officeHours += "\(unpackOfficeHours(oh: i))"
             }
         }
         
@@ -79,7 +79,7 @@ class DetailViewController: UIViewController {
         officeDaysTextView.text = officeDays
         officeHoursTextView.text = officeHours
         
-        emailAddressLabel.text = sentData4
+        emailAddressTextView.text = sentData4
         if (sentData6 == "") {
             officeLabel.isHidden = true
         }
@@ -132,7 +132,7 @@ class DetailViewController: UIViewController {
         var unpacked = ""
 
         for (index, element) in oh.officeHoursStart.enumerated() {
-            let ohSE = "\(element) - \(oh.officeHoursEnd[index])"
+            let ohSE = "\(element) - \(oh.officeHoursEnd[index])\n"
             unpacked += "\(ohSE) "
         }
         
